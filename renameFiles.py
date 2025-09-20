@@ -125,7 +125,7 @@ class ImageRenamer:
         for i, file_path in enumerate(image_files, 1):
             # Use original extension but change to .jpg if needed
             original_ext = file_path.suffix.lower()
-            new_name = f"image_{i:03d}.jpg"  # Always use .jpg extension
+            new_name = f"{i:03d}.jpg"  # Always use .jpg extension
             new_path = file_path.parent / new_name
             
             files_to_rename.append((file_path, new_path, new_name))
@@ -162,7 +162,7 @@ class ImageRenamer:
 
 def main():
     # Ask user for the image directory path
-    print("Image File Renamer - Converts all images to image_001.jpg, image_002.jpg, etc.")
+    print("Image File Renamer - Converts all images to 0001.jpg, 0002.jpg, 0003.jpg, etc.")
     print("\nExamples of paths you can use:")
     print("  ./images          (images folder in current directory)")
     print("  ../photos         (photos folder in parent directory)")
@@ -186,7 +186,7 @@ def main():
         print(f"Error: Directory '{image_dir}' does not exist!")
         return
     
-    print("This will rename all image files to: image_001.jpg, image_002.jpg, etc.")
+    print("This will rename all image files to: 0001.jpg, 0002.jpg, 0003.jpg, etc.")
     
     # Ask for confirmation
     response = input("Do you want to continue? (y/N): ").strip().lower()
